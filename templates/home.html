@@ -1,0 +1,174 @@
+{% extends './base.html' %}
+{% block title %} Food Hub {% endblock %}
+
+{% block content %}
+
+
+
+<div class="wrapper1 wrap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card p-2">
+                    <h2>Choose Preference</h2>
+                    <form action="{{ url_for('predict_datapoint')}}" method="post">
+                        <div class="form-group">
+                            <label for="cuisine">Select Cuisine:</label>
+                            <select id="cuisine" name="cuisine">
+                                <option value="" disabled selected hidden class="select-placeholder">
+                                    Please provide the cuisine of your preference for the meal
+                                </option>
+                                {% for cuisine in dict.cuisines %}
+                                <option value="{{cuisine}}">{{cuisine}}</option>
+                                <!-- options go here -->
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="course">Select Course:</label>
+                            <select id="course" name="course">
+                                <option value="" disabled selected hidden class="select-placeholder">
+                                    Please specify the desired course of food
+                                </option>
+                                {% for course in dict.courses %}
+                                <option value="{{course}}">{{course}}</option>
+                                <!-- options go here -->
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diet">Select Diet:</label>
+                            <select id="diet" name="diet">
+                                <option value="" disabled selected hidden class="select-placeholder">
+                                    Please indicate your dietary preferences
+                                </option>
+                                {% for diet in dict.diets %}
+                                <option value="{{diet}}">{{diet}}</option>
+                                <!-- options go here -->
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preparationTime">Preparation Time:</label>
+                            <input type="number" id="preparationTime" name="prep_time" min="0" max="320"
+                                placeholder="Enter preparation time (in minutes)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="containMilk">Contain Milk:</label>
+                            <select id="containMilk" name="contain_milk">
+                                <option value="">Choose</option>
+                                <option value=1>Yes</option>
+                                <option value=0>No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="containCurd">Contain Curd:</label>
+                            <select id="containCurd" name="contain_curd">
+                                <option value="">Choose</option>
+                                <option value=1>Yes</option>
+                                <option value=0>No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="containOnionGarlic">Contain Onion/Garlic:</label>
+                            <select id="containOnionGarlic" name="onion_garlic">
+                                <option value="">Choose</option>
+                                <option value=1>Yes</option>
+                                <option value=0>No</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn" id="formSubmit"> Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% if dict.result %}
+
+<div class="wrapper2 wrap">
+    <div class="container">
+        <h2 class="text-center pb-3">{{dict.result}}</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9">
+                <img src="{{dict.image}}" alt="" class="desc_img" />
+                <div class="description">
+                    <h3>Description</h3>
+                    <p class="desp d-inline">
+                        {{dict.desc}}
+                    </p>
+                    <span class="readmore">Read More...</span>
+                </div>
+
+                <div class="instruction">
+                    <h3>Instruction</h3>
+                    <p class="inst d-inline">
+                        {{dict.inst}}
+                    </p>
+                    <span class="readmore1">Read More...</span>
+                </div>
+                <div class="ingredient">
+                    <h3>Ingredient</h3>
+                    <p class="ingr d-inline">
+                        {{dict.ingr}}
+                    </p>
+                    <span class="readmore2">Read More...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+
+
+
+
+
+<div class="container d-flex justify-content-center" id="buttonContainer">
+    <form action="{{ url_for('food_recommendation')}}" method="post">
+        <button type="submit" class="btn bg-success text-light recommend" id="showRecommendations">Recommendations</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% if dict.rec %}
+
+<div class="container">
+    <h2 class="text-center pb-3">Recommendations</h2>
+    <div class="row">
+        {% for item in dict.rec %}
+        <div class="col-md-4">
+        <div class="card">
+            <img src="{{item.image_url}}" class="card-img-top" alt="Image">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+
+                <p class="card-text">{{item.description}}</p>
+            </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+</div>
+
+    {% endif %}
+
+
+    {% endblock %}
