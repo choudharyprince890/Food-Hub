@@ -5,303 +5,91 @@
 
 {% block content %}
 
-<style>
-    .gradient-custom {
-        /* fallback for old browsers */
-        background: #f6d365;
 
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: -webkit-linear-gradient(to right, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1)) 
-        
-        
-    }
-        
-        
-        /* @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
-
-        .frame {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 400px;
-            margin-top: -200px;
-            margin-left: -200px;
-            border-radius: 2px;
-            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            background: linear-gradient(to top right, darkmagenta 0%, hotpink 100%);
-            color: #333;
-            font-family: "Open Sans", Helvetica, sans-serif;
-        }
-
-        .center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 260px;
-            border-radius: 3px;
-            box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-        }
-
-        .title {
-            width: 100%;
-            height: 50px;
-            border-bottom: 1px solid #999;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 16px;
-            font-weight: 300;
-            color: #666;
-        }
-
-        .dropzone {
-            width: 100px;
-            height: 80px;
-            border: 1px dashed #999;
-            border-radius: 3px;
-            text-align: center;
-        }
-
-        .upload-icon {
-            margin: 25px 2px 2px 2px;
-        }
-
-        .upload-input {
-            position: relative;
-            top: -62px;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-        }
-
-        .btn {
-            display: block;
-            width: 140px;
-            height: 40px;
-            background: darkmagenta;
-            color: #fff;
-            border-radius: 3px;
-            border: 0;
-            box-shadow: 0 3px 0 0 hotpink;
-            transition: all 0.3s ease-in-out;
-            font-size: 14px;
-        }
-
-        .btn:hover {
-            background: rebeccapurple;
-            box-shadow: 0 3px 0 0 deeppink;
-        }
- */
-
-
-    
-</style>
-
-<section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-xl-10">
-                <div class="card">
-                    <div class="card-body py-5">
-
-                        <!-- Carousel wrapper -->
-                        <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
-                            <!-- Indicators -->
-                            <div class="carousel-indicators mb-0">
-                                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1"
-                                    aria-label="Slide 1"></button>
-                                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2"
-                                    aria-label="Slide 1"></button>
-                            </div>
-
-                            <!-- Inner -->
-                            <div class="carousel-inner pt-2 pb-5">
-                                <!-- Single item -->
-                                <div class="carousel-item active">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-8 col-lg-9 col-xl-8">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <img src="https://media.giphy.com/media/k6jciHAEPdkFu5yNpF/giphy.gif"
-                                                        class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar"
-                                                        width="90" height="90">
-                                                </div>
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <figure>
-                                                        <blockquote class="blockquote mb-4">
-                                                            <p>
-                                                                <i
-                                                                    class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                <span class="font-italic">“Food can be very
-                                                                    transformational, and it can be more than just about
-                                                                    a dish. That’s what happened to me when I first went
-                                                                    to France. I fell in love. And if you fall in love,
-                                                                    well, then everything is easy.”</span>
-                                                            </p>
-                                                        </blockquote>
-                                                        <figcaption class="blockquote-footer">
-                                                            Alice Waters <cite title="Source Title">The Guardian</cite>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single item -->
-                                <div class="carousel-item">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-8 col-lg-9 col-xl-8">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <img src="https://media.giphy.com/media/s34J4dqvAB3LiGtnCK/giphy.gif"
-                                                        class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar"
-                                                        width="90" height="90">
-                                                </div>
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <figure>
-                                                        <blockquote class="blockquote mb-4">
-                                                            <p>
-                                                                <i
-                                                                    class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                <span class="font-italic">“Truly, love is delightful and
-                                                                    pleasant food, supplying, as it does, rest to the
-                                                                    weary, strength to the weak, and joy to the
-                                                                    sorrowful. It in fact renders the yoke of truth easy
-                                                                    and its burden light.”.</span>
-                                                            </p>
-                                                        </blockquote>
-                                                        <figcaption class="blockquote-footer">
-                                                            Saint Bernard <cite title="Source Title">New York
-                                                                Times</cite>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single item -->
-                                <div class="carousel-item">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-8 col-lg-9 col-xl-8">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <img src="https://media.giphy.com/media/m98YKHIfc280xZA8q3/giphy.gif"
-                                                        class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar"
-                                                        width="90" height="90">
-                                                </div>
-                                                <div class="flex-grow-1 ms-4 ps-3">
-                                                    <figure>
-                                                        <blockquote class="blockquote mb-4">
-                                                            <p>
-                                                                <i
-                                                                    class="fas fa-quote-left fa-lg text-warning me-2"></i>
-                                                                <span class="font-italic">“If more of us valued food and
-                                                                    cheer and song above hoarded gold, it would be a
-                                                                    merrier world.”.</span>
-                                                            </p>
-                                                        </blockquote>
-                                                        <figcaption class="blockquote-footer">
-                                                            J.R.R. Tolkien <cite title="Source Title">Smash
-                                                                Magazine</cite>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Inner -->
-
-                            <!-- Controls -->
-                            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant"
-                                data-mdb-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant"
-                                data-mdb-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <!-- Carousel wrapper -->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="pt-2">
+    {% include "cards.html" %}
+</div>
 
 
 
-
-
-<h1>Upload image of Indian food to know the food name</h1>
-
-
-
-
-
-
-
-<div class="frame">
-    <div class="center">
-        <div class="title">
-            <h1>Drop file to upload</h1>
-        </div>
-
-        <div class="dropzone">
-            <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-
-            <form action="{{ url_for('food_detect')}}" method="post" enctype="multipart/form-data">
-                <input type="file" name="f_image" class="upload-input" id="inputfile" onchange="preview_image(event)" style="font-weight: bold;">
-                <br>
-                <br>
-                <img id="output-image" class="rounded mx-auto d-block" />
-                <button type="submit" class="btn" name="uploadbutton">Predict</button>
-            </form>
+<div class="container">
+    <div class="row">
+        <div class="col-8 text-center mx-auto">
+            <h1 class="display-4"><strong>Find Product</strong></h1>
+            <p class="lead">Upload image of Indian food to know the food name</p>
         </div>
     </div>
 </div>
 
 
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="{{ url_for('food_detect')}}" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="f_image" class="form-label">Upload Image</label>
+            <input type="file" class="form-control" id="f_image" name="f_image" accept="image/*">
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Upload</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="d-flex justify-content-center">
+          <img id="uploadedImage" class="img-fluid" alt="Uploaded Image" style="max-width: 300px; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
 {% if dict.prediction %}
-<h1>This dish is called {{dict.prediction}}</h1>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="text-center">
+          <h1 class="beautiful-font">This dish is called {{dict.prediction}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endif %}
 
 
-<script type="text/javascript">
-    function preview_image(event) {
+
+
+
+<script>
+    document.getElementById('f_image').addEventListener('change', function(event) {
       var reader = new FileReader();
-      reader.onload = function () {
-        var output = document.getElementById('output-image')
-        output.src = reader.result;
+      reader.onload = function() {
+        document.getElementById('uploadedImage').src = reader.result;
       }
       reader.readAsDataURL(event.target.files[0]);
-    }
+    });
   </script>
+
+
+
 
 {% endblock %}

@@ -3,9 +3,17 @@
 
 {% block content %}
 
+<style>
+    .wrapper1 {
+      background-image: url('/static/image/5808.png') !important;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 700px
+    }
+</style>
 
 
-<div class="wrapper1 wrap">
+<div class="wrapper1 wrap pt-3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
@@ -80,7 +88,7 @@
                                 <option value=0>No</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn" id="formSubmit"> Submit</button>
+                        <button type="submit" class="btn mt-3 mb-4" id="formSubmit"> Submit</button>
                     </form>
                 </div>
             </div>
@@ -98,46 +106,56 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-9">
                 <img src="{{dict.image}}" alt="" class="desc_img" />
-                <div class="description">
-                    <h3>Description</h3>
-                    <p class="desp d-inline">
-                        {{dict.desc}}
-                    </p>
-                    <span class="readmore">Read More...</span>
-                </div>
 
-                <div class="instruction">
-                    <h3>Instruction</h3>
-                    <p class="inst d-inline">
-                        {{dict.inst}}
-                    </p>
-                    <span class="readmore1">Read More...</span>
-                </div>
-                <div class="ingredient">
-                    <h3>Ingredient</h3>
-                    <p class="ingr d-inline">
-                        {{dict.ingr}}
-                    </p>
-                    <span class="readmore2">Read More...</span>
+                <div class="jumbotron" >
+
+                
+                    <div class="description">
+                        <h3>Description</h3>
+                        <p class="desp d-inline">
+                            {{dict.desc}}
+                        </p>
+                        <span class="readmore">Read More...</span>
+                    </div>
+
+                    <div class="instruction">
+                        <h3>Recipe</h3>
+                        <p class="inst d-inline">
+                            {{dict.inst}}
+                        </p>
+                        <span class="readmore1">Read More...</span>
+                    </div>
+                    <div class="ingredient">
+                        <h3>Ingredient</h3>
+
+                        <p class="ingr d-inline">
+                            {{dict.ingr}}
+                        </p>
+                        <span class="readmore2">Read More...</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{% endif %}
 
 
-
-
-
-
-<div class="container d-flex justify-content-center" id="buttonContainer">
-    <form action="{{ url_for('food_recommendation')}}" method="post">
-        <button type="submit" class="btn bg-success text-light recommend" id="showRecommendations">Recommendations</button>
-    </form>
+<div class="container" id="buttonContainer">
+    <div>
+        <div class="col-9 mx-auto text-center" >
+            <h1>Click on the Recommendation button to see more dishes like this</h1>
+        </div>
+        <div class="col-2 mx-auto m-2">
+            <form action="{{ url_for('food_recommendation')}}" method="post">
+                <button type="submit" class="btn bg-success text-light recommend" id="showRecommendations">Recommendations</button>
+            </form>
+        </div>
+    </div>
 </div>
 
+
+{% endif %}
 
 
 
@@ -150,8 +168,10 @@
 
 {% if dict.rec %}
 
+
+
 <div class="container">
-    <h2 class="text-center pb-3">Recommendations</h2>
+    <h2 class="text-center m-5">Recommendations</h2>
     <div class="row">
         {% for item in dict.rec %}
         <div class="col-md-4">

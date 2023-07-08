@@ -8,19 +8,16 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url("/static/image/5808.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
   }
   
   .logo img {
     /* Set width, height, or any other styling for the logo image */
     width: 150px;
     height: 50px;
+    margin-left: 20px;
   }
   
   .wrap {
@@ -43,7 +40,8 @@
   .readmore,.readmore1,.readmore2{
     display: none;
     cursor: pointer;
-    color:blue;
+    color:rgb(232, 172, 172);
+    /* color:blue; */
     
   }
   .description,.instruction,.ingredient{
@@ -81,28 +79,12 @@
     margin-top: 50px;
   }
   
-  body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
   
   .select-placeholder {
     color: #d3d3d3; /* Desired text color */
     opacity: 0.4; /* Desired opacity level (0.0 to 1.0) */
   }
-  
-  /* .container { */
-  /* width: 80%;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    opacity: 0.85;
-  } */
+
   
   h2 {
     text-align: center;
@@ -131,7 +113,7 @@
   button[type="submit"] {
     display: block;
     width: 100%;
-    background-color: #4caf50;
+    background-color: rgb(232, 172, 172);
     color: #fff;
     border: none;
     padding: 5px 5px;
@@ -156,6 +138,25 @@
 
 
 
+  #my-text {
+    color: rgb(0, 0, 0);
+  }
+
+#buttonContainer{
+  margin: 20px;
+  border: 1px solid rgb(232, 172, 172);
+    border-radius: 10px;
+    margin-left: auto; 
+    margin-right: auto
+}
+
+#footer_id{
+  background-color: rgb(232, 172, 172);
+}
+
+#nav_color{
+  background-color: rgb(232, 172, 172);
+}
 
 
 
@@ -165,9 +166,7 @@
 
 
 
-
-
-
+  
 
 
 

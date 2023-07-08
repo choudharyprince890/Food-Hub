@@ -18,10 +18,10 @@
 
 <body>
     <!-- nav bar  -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg " id="nav_color">
         <div class="container-fluid">
-            <a class="navbar-brand logo" href="/">
-                <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Image">
+            <a class="navbar-brand logo" href="/predictdata">
+                <img src="{{ url_for('static', filename='image/fhublogo2.png') }}" alt="Image">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,11 +31,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/predictdata">Home</a>
+                        <!-- <a class="nav-link active" aria-current="page" href="/predictdata">Home</a> -->
+                        <a class="nav-link" aria-current="page" id="my-text" href="/predictdata">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/imagedetect">Detect Food</a>
+                        <a class="nav-link" href="/imagedetect" id="my-text">Detect Food</a>
                     </li>
                 </ul>
             </div>
@@ -56,22 +57,17 @@
 
 
 	<!-- footer -->
-	<footer class="text-center py-5">
-		<div class="container py-md-3">
-			<h2 class="logo2 text-center">
-				<a href="{{ url_for('food_detect') }}">
+	<footer class="text-center" id="footer_id">
+		<div class="container p-2 md-3">
+			<h2 class="logo2 text-center pb-2" >
+				<a href="{{ url_for('food_detect') }}" id="my-text">
 					Food Hub
 				</a>
 			</h2>
-			<div class="contact-left-footer mt-4">
-				</p>
-			</div>
 			<div class="w3l-copy text-center">
-				<p class="text-da">ML Powered webapp for foodies<br> </p>
+				<p class="text-da mb-0">ML Powered webapp for foodies<br> </p>
 			</div>
-			<p class="homelogo">
-			
-            <p>&copy; Copyright [2023] [Made with ❤️ by Prince Choudhary]. All rights reserved.</p>
+            <p class="mb-0">&copy; Copyright [2023] [Made with ❤️ by Prince Choudhary]. All rights reserved.</p>
 			
 		</div>
 	</footer>
