@@ -148,11 +148,13 @@ def food_detect():
         model_path = os.path.join("src/artifcats/food_image_classification","save_at_50.h5")
         pred = load_image_detection_model(model_path,file_path)
 
-        dict = {
-            "prediction": pred
-        }
+        print("these are dict values...",pred)
+
+        # dict = {
+        #     "prediction": pred
+        # }
         logging.info("image is identified and returned in the template")
-        return render_template('food_recognision.html',dict=dict)
+        return render_template('food_recognision.html',pred=pred)
 
 
 
@@ -169,21 +171,20 @@ def food_recommendation():
         simimlarity = cosine_similarity(vector)
 
         # name = dict.result[0]
-        # name = "Thayir Semiya Recipe (Curd Semiya)"
-        name = recommended_dish
-        name_index = recommendation_df[recommendation_df['name'] == name].index[0]
+        # recommended_dish_name = "Thayir Semiya Recipe (Curd Semiya)"
+        recommended_dish_name = recommended_dish
+        name_index = recommendation_df[recommendation_df['name'] == recommended_dish_name].index[0]
         distances = simimlarity[name_index]
         dish_list = sorted(list(enumerate(distances)),reverse=True, key=lambda x:x[1])[1:4]
         l = []
         for a in dish_list:
             dishes = recommendation_df.iloc[a[0]]
             l.append(dishes[['name','image_url','description']])
+            
         dict = {
-            "rec": l
-            # "rec": l[0]
+            "rec": l,
         }
-        print("l ->>>>> ",l[0])
-        # print("dict---> ",dict)
+        # print("dict---> ",dict.rec.name)
 
         return render_template('home.html',dict=dict)
 

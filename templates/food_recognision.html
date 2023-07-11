@@ -60,14 +60,15 @@
 
 
 
-
-
-{% if dict.prediction %}
+{% if pred %}
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="text-center">
-          <h1 class="beautiful-font">This dish is called {{dict.prediction}}</h1>
+          <div class="alert alert-success" role="alert">
+            <h4>This dish is called</h4>
+            <h1 class="alert-heading">{{pred}}!</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -75,6 +76,9 @@
 
 {% endif %}
 
+<br>
+<br>
+<br>
 
 
 
