@@ -1,0 +1,81 @@
+{% extends './base.html' %}
+{% block title %} Generate Recipe {% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .left-div {
+      background-color: #f2f2f2; /* Set background color for the div */
+      padding-left: 20px; /* Add some padding to create space around the elements */
+      padding-right: 20px; /* Add some padding to create space around the elements */
+      height: 100vh; /* Set the height to fit the viewport */
+    }
+
+    /* Custom CSS for the right div */
+    .right-div {
+      height: 100vh; /* Set the height to fit the viewport */
+      background-color: #e5e5e5; /* Optional background color for the right div */
+    }
+
+    /* Custom CSS to stretch the image to fit the right div */
+    .right-div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    p{
+        margin-bottom: 0 !important;
+    }
+    h5{
+        margin-bottom: 0 !important;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Div -->
+        <div class="col-md-6 left-div">
+            <!-- Heading -->
+            <h5>Meet our Chef SANJEEV KAPOOR</h5>
+
+            <!-- Textarea Input Field -->
+            <form action="{{ url_for('generate_recipe')}}" method="post">
+
+                <div class="form-group">
+                    <!-- <label class="lead">Tell your ingredients & Sanjeev will divine the perfect recipe from your humble ingredients.</label> -->
+                    <p>Tell your ingredients & Sanjeev will divine the perfect recipe from your humble ingredients.</p>
+                    <textarea class="form-control" id="textAreaInput" rows="2" name="ingredients" placeholder="Type here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+            </form>
+            <!-- Empty Space -->
+            {% if dict.status == True %}
+                <div style="height: 20px;">
+                    <p class="h6">Dish: {{dict.recipe_name}}</p>
+                    
+                    {% for recipe in dict.full_recipe %} 
+                        <p>{{recipe}}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <!-- The above div will create an empty space with 20px height -->
+
+            <!-- You can add more content inside the left div if needed -->
+        </div>
+
+        <!-- Right Div (This will take the remaining width) -->
+        <div class="col-md-6 right-div">
+            <!-- Add the image inside the right div -->
+            <img src="/static/image/cook boy.jpg" alt="Image">
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
