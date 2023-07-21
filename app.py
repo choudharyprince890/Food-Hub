@@ -112,7 +112,7 @@ def predict_datapoint():
 
 
 
-
+# function for recomendation  (cosine similarity)
 @app.route('/showrecommendation',methods=['GET','POST'])
 def food_recommendation():
     print("rec")
@@ -146,7 +146,7 @@ def food_recommendation():
 
 
 
-# this function fetch the model asnd image path
+# this function fetch the model and image path for image recognision
 @app.route('/imagedetect',methods=['GET','POST'])
 def food_detect():
     if request.method=='GET':
