@@ -9,7 +9,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img alt="Awesome GitHub Profile Readme" src="uploads/ezgif.com-crop.gif"> </img>
+
+- [Click Here to watch the full video](https://youtu.be/inn7iNcB7U4) - *Youtube*
+
 #### Description
 Food Hub is an innovative project that leverages cutting-edge machine learning, deep learning and transformer techniques to provide a comprehensive food-related experience to users. 
 
